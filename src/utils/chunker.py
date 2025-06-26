@@ -29,5 +29,6 @@ class Chunker:
             logging.info(f"Chunking completed. Number of chunks created: {len(chunks)}")
             return chunks
         except Exception as e:
+            logging.error(f"Error chunking PDF file: {e}")
             raise CustomException(e, sys)
         
