@@ -28,6 +28,7 @@ def get_genai_client(model_name:str="gemini-2.0-flash", temperature: float = 0.5
             temperature=temperature,
         )
     except Exception as e:
+        logging.error(f"Failed to initialize Google Generative AI client: {e}")
         raise CustomException(e, sys)
     
 model = get_genai_client()
