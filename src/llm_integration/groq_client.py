@@ -27,4 +27,5 @@ def get_groq_client(model_name: str = "meta-llama/llama-4-maverick-17b-128e-inst
             temperature=temperature,
         )
     except Exception as e:
+        logging.error(f"Failed to initialize Groq client: {e}")
         raise CustomException(e, sys)
