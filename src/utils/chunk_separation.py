@@ -30,6 +30,7 @@ class ChunkSeparator:
             
             return text_chunks, table_chunks
         except Exception as e:
+            logging.error(f"Error separating chunks: {e}")
             raise CustomException(e, sys)
 
     def separate_image_chunks(self, chunks):
@@ -45,6 +46,7 @@ class ChunkSeparator:
                             images_b64.append(el.metadata.image_base64)
             return images_b64
         except Exception as e:
+            logging.error(f"Error separating image chunks: {e}")
             raise CustomException(e, sys)
 
 
